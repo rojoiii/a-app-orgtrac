@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OrgTrac</string>
+    <string name="loading">Loading...</string>
+    <string name="sync_error_title">Error Loading Application</string>
+    <string name="sync_error_msg">Sorry, we encountered an error loading the application.</string>
+    <string name="sync_error_retry">Retry</string>
+    <string name="sync_error_exit">Exit</string>
+</resources>
