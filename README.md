@@ -1,2 +1,2 @@
-# a-app-orgtrac
+# OrgTrac
 At the highest level OrgTrac is simply an application whose layout and content is driven by a dynamic resource, in this case the CMS Contentful. The Application Codebase will implement the Model Definitions using data defined in Contentful to build its UI. Lastly, the provided wiki and sample app will show the Customer how the pieces all work together in order to publish the App to the Play Store.
