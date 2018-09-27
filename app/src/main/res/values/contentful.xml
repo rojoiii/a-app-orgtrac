@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) 2014 - 2018 Smile Direct Club (SDC)
+  ~  All Rights Reserved.
+  ~
+  ~ NOTICE:  All information contained herein is, and remains the property of Smile Direct Club and
+  ~ its suppliers, if any. The intellectual and technical concepts contained herein are proprietary
+  ~ to Smile Direct Club and its suppliers and may be covered by U.S. and Foreign Patents, patents
+  ~ in process, and are protected by trade secret or copyright law. Dissemination of this information
+  ~ or reproduction of this material is strictly forbidden unless prior written permission is
+  ~ obtained from Smile Direct Club.
+  -->
+
+<resources>
+    <string name="cf_cda_token">b4855e2317401dfd966d6f85ca8c691391332de7a11fd4a38fa912f325aec9f6</string>
+    <string name="cf_space_id">8xlsif263lsg</string>
+</resources>
