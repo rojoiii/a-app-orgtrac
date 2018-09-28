@@ -7,6 +7,7 @@ import com.contentful.vault.SyncConfig
 import com.contentful.vault.Vault
 import dagger.Module
 import dagger.Provides
+import edu.csun.orgtrac.DataManager
 import edu.csun.orgtrac.R
 import edu.csun.orgtrac.Space
 import javax.inject.Singleton
@@ -40,5 +41,11 @@ class AppModule(private val application: Application) {
             .setClient(cdaClient)
             .setInvalidate(true)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideDataManager(vault: Vault, syncConfig: SyncConfig): DataManager {
+        return DataManager(vault, syncConfig)
     }
 }

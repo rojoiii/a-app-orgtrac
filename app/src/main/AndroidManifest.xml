@@ -3,6 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="edu.csun.orgtrac">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".OrgTracApplication"
         android:allowBackup="true"
@@ -23,12 +25,7 @@
 
         <activity
             android:name=".activity.LandingActivity"
-            android:label="@string/app_name"
-            android:parentActivityName=".activity.LoadingActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="edu.csun.orgtrac.activity.LoadingActivity"/>
         </activity>
 
         <activity

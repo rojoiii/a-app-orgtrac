@@ -23,7 +23,7 @@ import com.contentful.vault.Space
         Contentful.Model.LinkElement::class,
         Contentful.Model.LinkReference::class
     ],
-    locales = ["en-us"],
+    locales = ["en-US"],
     dbVersion = 1
 )
 class Space
@@ -31,7 +31,7 @@ class Contentful{
     class Model {
         @ContentType("pageLoading")
         data class LoadingPage(
-            @Field @JvmField var name: String? = null,
+            @Field("name") @JvmField var name: String? = null,
             @Field @JvmField var title: String? = null,
             @Field @JvmField var image: Asset? = null,
             @Field @JvmField var message: String? = null,
