@@ -5,11 +5,15 @@ import android.content.Context
 import com.contentful.java.cda.CDAClient
 import com.contentful.vault.SyncConfig
 import com.contentful.vault.Vault
+import com.squareup.picasso.OkHttp3Downloader
+import com.squareup.picasso.Picasso
 import dagger.Module
 import dagger.Provides
 import edu.csun.orgtrac.DataManager
 import edu.csun.orgtrac.R
 import edu.csun.orgtrac.Space
+import okhttp3.OkHttpClient
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -47,5 +51,21 @@ class AppModule(private val application: Application) {
     @Singleton
     fun provideDataManager(vault: Vault, syncConfig: SyncConfig): DataManager {
         return DataManager(vault, syncConfig)
+    }
+
+    @Provides
+    @Singleton
+    fun providePicasso(context: Context): Picasso {
+        return Picasso.Builder(context)
+            .downloader(
+                OkHttp3Downloader(
+                    OkHttpClient.Builder()
+                        .connectTimeout(10, TimeUnit.SECONDS)
+                        .writeTimeout(10, TimeUnit.SECONDS)
+                        .readTimeout(10, TimeUnit.SECONDS)
+                        .build()
+                )
+            )
+            .build()
     }
 }

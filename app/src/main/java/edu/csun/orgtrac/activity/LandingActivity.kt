@@ -2,12 +2,17 @@ package edu.csun.orgtrac.activity
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.support.customtabs.CustomTabsIntent
 import android.support.v7.app.AppCompatActivity
+import com.pawegio.kandroid.toast
 import edu.csun.orgtrac.DataManager
+import edu.csun.orgtrac.OrgTrac
 import edu.csun.orgtrac.R
 import edu.csun.orgtrac.component
-import kotlinx.android.synthetic.main.activity_landing.*
+import kotlinx.android.synthetic.main.activity_landing.landing_content
+import kotlinx.android.synthetic.main.activity_landing.toolbar
 import kotlinx.android.synthetic.main.activity_landing_item.view.landing_card_title
 import javax.inject.Inject
 
@@ -28,7 +33,20 @@ class LandingActivity : AppCompatActivity() {
 
             itemView.landing_card_title.text = mainPage.title
             itemView.setOnClickListener {
-                startActivity(MainActivity.newIntent(this, mainPage.slug.orEmpty()))
+                mainPage.content?.let { content ->
+                    if (content.isNotEmpty()) {
+                        if (content.size == 1 && content.first() is OrgTrac.Model.Content.Template.Web) {
+                            CustomTabsIntent.Builder()
+                                .setToolbarColor(resources.getColor(R.color.colorAccent))
+                                .build()
+                                .launchUrl(this, Uri.parse((content.first() as OrgTrac.Model.Content.Template.Web).url))
+                        } else {
+                            startActivity(MainActivity.newIntent(this, mainPage.slug.orEmpty()))
+                        }
+                    } else {
+                        toast("Sorry, this screen in not defined yet.")
+                    }
+                }
             }
 
             landing_content.addView(itemView)

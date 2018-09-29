@@ -3,17 +3,20 @@ package edu.csun.orgtrac.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.pawegio.kandroid.toast
+import com.squareup.picasso.Picasso
 import edu.csun.orgtrac.DataManager
 import edu.csun.orgtrac.R
 import edu.csun.orgtrac.component
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_loading.loading_image
 import kotlinx.android.synthetic.main.activity_loading.loading_message
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class LoadingActivity : AppCompatActivity() {
     @Inject lateinit var dataManager: DataManager
+    @Inject lateinit var picasso: Picasso
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +46,9 @@ class LoadingActivity : AppCompatActivity() {
         dataManager.loadingPage?.let {
             title = it.title
             loading_message.text = it.message
+            picasso
+                .load(it.image)
+                .into(loading_image)
         }
     }
 }

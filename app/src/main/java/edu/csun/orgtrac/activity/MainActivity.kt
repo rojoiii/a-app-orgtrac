@@ -2,8 +2,11 @@ package edu.csun.orgtrac.activity
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.support.customtabs.CustomTabsIntent
 import android.support.v7.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 import edu.csun.orgtrac.DataManager
 import edu.csun.orgtrac.OrgTrac
 import edu.csun.orgtrac.R
@@ -24,6 +27,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     @Inject lateinit var dataManager: DataManager
+    @Inject lateinit var picasso: Picasso
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +48,10 @@ class MainActivity : AppCompatActivity() {
 
                     itemView.web_title.text = content.title
                     itemView.setOnClickListener {
-                        // TODO: Stuffs
+                        CustomTabsIntent.Builder()
+                            .setToolbarColor(resources.getColor(R.color.colorAccent))
+                            .build()
+                            .launchUrl(this, Uri.parse(content.url))
                     }
 
                     main_content.addView(itemView)
