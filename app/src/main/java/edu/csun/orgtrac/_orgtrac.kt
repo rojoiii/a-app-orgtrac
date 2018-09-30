@@ -274,12 +274,14 @@ class OrgTrac {
                 }
 
                 data class Youtube(
+                    var title: String? = null,
                     var url: String? = null
                 ) : Element() {
                     companion object {
                         fun build(element: Contentful.Model.YoutubeElement?): Youtube? {
                             if (element != null) {
                                 return Youtube(
+                                    element.title,
                                     element.url
                                 )
                             }

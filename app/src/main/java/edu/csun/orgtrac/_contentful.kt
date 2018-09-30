@@ -121,6 +121,7 @@ class Contentful{
         @ContentType("elementYouTubeVideo")
         data class YoutubeElement(
             @Field @JvmField var name: String? = null,
+            @Field @JvmField var title: String? = null,
             @Field @JvmField var url: String? = null,
             @Field @JvmField var slug: String? = null
         ) : Resource()
