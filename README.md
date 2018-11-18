@@ -9,4 +9,4 @@ Head over to the Wiki to get started!
 [OrgTrac Wiki](https://github.com/rojoiii/a-app-orgtrac/wiki)
 
 You can also take a look at the Thesis Dissertation at the core of OrgTrac!
-[OrgTrac Dissertation](https://github.com/rojoiii/a-app-orgtrac/blob/develop/OrgTrac%20-%20Graduate%20Project%20-%20Dissertation.pdf)
+[OrgTrac Dissertation](https://github.com/rojoiii/a-app-orgtrac/blob/develop/Dissertation.pdf)
