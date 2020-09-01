@@ -8,5 +8,8 @@ All throughout society mobile devices are now ubiquitous and organizations, busi
 Head over to the Wiki to get started!
 [OrgTrac Wiki](https://github.com/rojoiii/a-app-orgtrac/wiki)
 
+You can take a look at the Android App on the Play Store!
+[OrgTrac App](https://play.google.com/store/apps/details?id=my.csun.orgtrac)
+
 You can also take a look at the Thesis Dissertation at the core of OrgTrac!
 [OrgTrac Dissertation](https://github.com/rojoiii/a-app-orgtrac/blob/develop/Dissertation.pdf)
